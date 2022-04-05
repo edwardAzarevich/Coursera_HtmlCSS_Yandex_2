@@ -1,0 +1,138 @@
+main
+{
+    text-align: center;
+    width: 900px;
+}
+.header {
+    margin: 50px auto 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+h1 {
+    margin: 0 0 15px;
+    font-size: 3rem;
+}
+h1::first-letter {
+    color: #f00;
+}
+.rating-mini {
+	display: inline-block;
+	font-size: 0;
+}
+.rating-mini span {
+	padding: 0;
+	font-size: 20px;
+	line-height: 1;
+	color: lightgrey;
+}
+.rating-mini > span:before {
+	content: '★';
+}
+.rating-mini > span.active {
+	color: gold;
+}
+
+
+.rating-mini > span:hover:before,
+.rating-mini > span:hover ~ span:before
+{
+    content: "\2605";
+    position: absolute;
+}
+
+.catty {
+	display: inline-block;
+	vertical-align: top; 
+
+    margin: 10px;
+    padding: 5px;
+    width: 300px;
+	height: 600px;
+}
+
+.info {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    padding: 5px; /* Поля вокруг текста */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.info h3{
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden; /* Обрезаем все, что не помещается в область */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+
+.price
+{
+    color: red;
+    font: bold 110% serif;
+}
+
+span.price
+{
+    color: #000;
+    text-decoration: line-through;
+}
+
+.photo img {
+	text-align: center;
+
+	margin-bottom: 0;
+	vertical-align: bottom;	
+	width: auto;
+    height: 200px;
+}
+
+.catty:hover
+{
+    box-shadow: 0 0 10px #ff0095;
+}
+
+a:hover{ 
+	color:red;
+	opacity: 0.7;
+}
+
+
+.content
+{
+    hyphens: manual;
+    vertical-align: top;
+}
+
+.category
+{
+    
+	font-size: smaller;
+}
+
+
+
+.card:checked ~ .catty
+{
+    display: block;
+    width: 100%;
+}
+
+.card:checked ~ .catty>.photo
+
+{
+    margin: 5px;
+    vertical-align: middle;
+    width: 30%;
+    height: auto;
+    display: inline-block;
+}
+
+
+.card:checked ~ .catty>.info,
+.card:checked ~ .catty>.content
+{
+    margin: 5px;
+    vertical-align: middle;
+    width: 30%;
+    display: inline-block;
+}

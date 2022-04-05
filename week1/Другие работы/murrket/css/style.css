@@ -1,0 +1,192 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Nunito:ital,wght@0,400;0,600;0,900;1,700&display=swap');
+
+/* General Settings */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+.header {
+    padding: 20px 0;
+}
+
+.header__title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 37px;
+    text-align: center;
+}
+
+
+/* Switch section */
+
+.switch__btns {
+    padding: 20px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.switch {
+    display: none;
+}
+
+.switch-titles,
+.switch-table {
+    cursor: pointer;
+    margin: 10px 0 10px 25px;
+    display: inline-block;
+    color: #ccc;
+    zoom: 2;
+}
+
+.switch-table {
+    margin-left: 10px;
+}
+
+.switch-titles:hover,
+.switch-table:hover {
+    color: #999;
+}
+
+#titles:checked~label[for='titles'],
+#table:checked~label[for='table'] {
+    color: #000;
+}
+
+#table:checked~.items {
+    display: table;
+    border-collapse: collapse;
+    table-layout: fixed;
+    padding: 0;
+}
+
+#table:checked~.items>.cat>.image,
+#table:checked~.items>.cat>.item-info,
+#table:checked~.items>.cat>.description {
+    display: table-cell;
+    vertical-align: top;
+}
+
+#table:checked~.items>.cat {
+    display: table-row;
+}
+
+#table:checked~.items>.cat>.image {
+    width: 400px;
+    padding: 10px 0px;
+    text-align: center;
+    overflow: hidden;
+}
+
+#table:checked~.items>.cat>.item-info {
+    overflow: hidden;
+    padding: 0px 10px;
+}
+
+#table:checked~.items>.cat>.item-info>.name {
+    width: 300px;
+}
+
+#table:checked~.items>.cat>.description {
+    min-width: 300px;
+    padding-bottom: 25px;
+}
+
+
+/* Main */
+
+.main {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.cat {
+    display: inline-block;
+    width: 300px;
+    margin: 10px;
+    overflow: hidden;
+    *min-height: 670px;
+    vertical-align: top;
+}
+
+.image {
+    max-width: 300px;
+    max-height: 500px;
+    *transition: transform 0.3s linear;
+}
+
+.image:hover {
+    opacity: .7;
+}
+
+.name {
+    overflow: hidden;
+}
+
+.name a:hover,
+.category a:hover {
+    color: red;
+}
+
+.category {
+    text-decoration: underline;
+    font-size: .8rem;
+}
+
+.rating {
+    margin: 5px 0;
+    display: inline-block;
+    zoom: 2;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    '
+
+}
+
+.rating .full-star {
+    text-shadow: 0 0 3px #000;
+}
+
+.rating input:checked~label {
+    color: #fc0;
+}
+
+.rating input:active~label,
+.rating input:hover~label {
+    color: salmon;
+}
+
+.price {
+    margin-top: 50px;
+    font-size: 2rem;
+}
+
+.price-new {
+    color: red;
+    font-weight: bold;
+}
+
+.price-old {
+    text-decoration: line-through;
+    color: black;
+    font-weight: normal;
+    margin-left: 10px;
+}
+
+.description {
+    margin-top: 10px;
+    text-align: justify;
+}

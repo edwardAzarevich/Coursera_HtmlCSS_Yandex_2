@@ -1,0 +1,234 @@
+
+    *{
+        box-sizing: border-box;
+  }
+  
+  body {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  h1 {
+    color: rgb(216, 90, 31);
+    text-align: center;
+    margin-bottom: -10px;
+  }
+  
+  .header_description {
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .list_items {
+    list-style: none;
+  }
+  
+  .item {
+    display: inline-block;
+    overflow: auto;
+    padding: 8px 4px 4px 4px;
+    vertical-align: top;
+  }
+  
+  .item_wrapper {
+    width: 300px;
+    height: 100%;
+    border: 1px solid #5ce7e0;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
+  .item_image-section {
+    height: 200px;
+    margin-bottom: 15px;
+  }
+  
+  .item_image-section img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  
+  .name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .cat_category {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .item_price {
+    font-size: 18px;
+    color: rgb(23, 70, 172);
+    margin-bottom: 15px;
+  }
+  
+  .old_price {
+    color: rgb(94, 94, 94);
+    text-decoration: line-through;
+  }
+  
+  .name {
+    font-size: 20px;
+    white-space: nowrap;
+  }
+  
+  a:hover,
+  img:hover {
+    color: red;
+    opacity: 0.7;
+  }
+  
+  /* Звездный рейтинг */
+  
+  .rating__group {
+    margin-bottom: 15px;
+    position: relative;
+    width: 10em;
+    height: 2em;
+    background-image: url(img/off.svg);
+    background-size: 2em auto;
+    background-repeat: repeat-x;
+  }
+  
+  .rating__group:focus-within {
+    outline: 0.2em solid #4a90e2;
+    outline-offset: 0.2em;
+  }
+  
+  .rating__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 2em;
+    font-size: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: 2em auto;
+    background-repeat: repeat-x;
+  }
+  
+  .rating__star:focus {
+    outline: none;
+  }
+  
+  .rating__star:hover,
+  .rating__star:checked {
+    background-image: url(img/on.svg);
+  }
+  
+  .rating__star:hover ~ .rating__star {
+    background-image: url(img/off.svg);
+  }
+  
+  .rating__star:nth-of-type(1) {
+    z-index: 10;
+    width: 1em;
+  }
+  
+  .rating__star:nth-of-type(2) {
+    z-index: 9;
+    width: 2em;
+  }
+  
+  .rating__star:nth-of-type(3) {
+    z-index: 8;
+    width: 3em;
+  }
+  
+  .rating__star:nth-of-type(4) {
+    z-index: 7;
+    width: 4em;
+  }
+  
+  .rating__star:nth-of-type(5) {
+    z-index: 6;
+    width: 5em;
+  }
+  
+  .rating__star:nth-of-type(6) {
+    z-index: 5;
+    width: 6em;
+  }
+  .rating__star:nth-of-type(7) {
+    z-index: 4;
+    width: 7em;
+  }
+  .rating__star:nth-of-type(8) {
+    z-index: 3;
+    width: 8em;
+  }
+  .rating__star:nth-of-type(9) {
+    z-index: 2;
+    width: 9em;
+  }
+  .rating__star:nth-of-type(10) {
+    z-index: 1;
+    width: 10em;
+  }
+  
+  /* Переключатель */
+  
+  #toggleView:checked ~ ul .item_wrapper {
+    display: block;
+    width: 1200px;
+    height: 100%;
+  }
+  
+  #toggleView:checked ~ ul .item_image-section {
+    display: inline-block;
+    width: 30%;
+    margin: auto;
+  }
+  
+  #toggleView:checked ~ ul .item_info {
+    display: inline-block;
+    width: 30%;
+    margin: -20px 0 0 30px;
+    vertical-align: top;
+  }
+  
+  #toggleView:checked ~ ul .description {
+    margin: 0 0 0 100px;
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+  }
+  
+  img.icon {
+    /* margin-left: 45px; */
+    border: 1px solid #000000;
+    border-radius: 3px;
+  }
+  
+  .icon-tile {
+    display: initial;
+    width: 2%;
+    height: 2%;
+    margin: 5px;
+  }
+  
+  .icon-list {
+    display: none;
+  }
+  
+  #toggleView:checked ~ label > .icon-tile {
+    display: none;
+  }
+  
+  #toggleView:checked ~ label > .icon-list {
+    display: initial;
+    width: 2%;
+    height: 2%;
+    margin: 5px;
+  }
+  
