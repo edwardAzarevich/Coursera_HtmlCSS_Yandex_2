@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Бабуленькины котятки</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Бабуленькины котятки</h1>
+	<input type="radio" class="breed" name="breed" value="abyssine" id="abyssine">
+	<input type="radio" class="breed" name="breed" value="britain" id="britain">
+	<input type="radio" class="breed" name="breed" value="russian_blue" id="russian_blue">
+	<input type="radio" class="breed" name="breed" value="syam" id="syam">
+	<div class="flex-container">
+		<div class="filter">
+			<ul>
+				<li class="abyssine"><label for="abyssine">Абиссинская</label></li>
+				<li class="britain"><label for="britain">Британская</label></li>
+				<li class="russian_blue"><label for="russian_blue">Русская голубая</label></li>
+				<li class="syam"><label for="syam">Сиамская</label></li>
+			</ul>
+		</div>
+		<div class="photos-content">
+			<ul class="wrapper">
+				<li>
+					<figure>
+						<img src="images/gosha.jpg" class="abyssine" alt="Гоша">
+						<figcaption>Гоша, 4 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/murzik.jpg" class="russian_blue" alt="Мурзик">
+						<figcaption>Мурзик, 2 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/lina.jpg" class="britain" alt="Лина">
+						<figcaption>Лина, 1.5 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/zosia.jpg" class="russian_blue" alt="Зося">
+						<figcaption>Зося, 2 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/rommi.jpg" class="abyssine" alt="Ромми">
+						<figcaption>Ромми, 2 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/zhulia.jpg" class="syam".jpg alt="Жуля">
+						<figcaption>Жуля, 4 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/efsiea.jpg" class="syam" alt="Ефсея">
+						<figcaption>Ефсея, 2 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/adetta.jpg" class="abyssine" alt="Адетта">
+						<figcaption>Адетта, 4 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/kris.jpg" class="russian_blue" alt="Крис">
+						<figcaption>Крис, 1.5 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/oladushka.jpg" class="britain" alt="Оладушка">
+						<figcaption>Оладушка, 2 года </figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/tsiseron.jpg" class="abyssine" alt="Цицерон">
+						<figcaption>Цицерон, 2 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/gloria.jpg" class="syam" alt="Глория">
+						<figcaption>Глория, 1 года</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/nensi.jpg" class="abyssine" alt="Ненси">
+						<figcaption>Ненси, 1 год</figcaption>
+					</figure>
+				</li>
+				<li>
+					<figure>
+						<img src="images/markisa.jpg" class="britain" alt="Маркиза">
+						<figcaption>Маркиза, 2 года</figcaption>
+					</figure>
+				</li>
+			</ul>
+		</div>
+		<div class="raiting">
+			<h3>Рейтинг</h3>
+			<label for="raiting">по убыванию </label><input type="checkbox" id="raiting" name="raiting">
+			<div class="wrapper">
+				<dl style="--order:9">
+					<dt>Абиссинская</dt>
+					<dd data-raiting="9"></dd>
+				</dl>
+				<dl style="--order:8">
+					<dt>Британская</dt>
+					<dd data-raiting="8"></dd>
+				</dl>
+				<dl style="--order:10">
+					<dt>Русская голубая</dt>
+					<dd data-raiting="10"></dd>
+				</dl>
+				<dl style="--order:4">
+					<dt>Сиамская</dt>
+					<dd data-raiting="4"></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<span class="left">&copy; OOO Бабуленькины котятки, 2018</span>
+		<address>улица Котовая, д.5</address>
+		<span class="right">Наш адрес:&nbsp;&nbsp;</span>
+	</footer>
+</body>
+</html>

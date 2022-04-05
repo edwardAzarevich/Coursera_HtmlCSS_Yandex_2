@@ -1,0 +1,236 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: Arial, sans-serif;
+	padding: 20px;
+	background-color: #ebebeb;
+}
+ul {
+	list-style: none;
+}
+h1 {
+	text-align: center;
+	margin: 20px;
+}
+/* 
+	Картинка будет вставлена в абсолютно позиционированнный контейнер,
+	растянутый по размерам ячейки грид-контейнера, 
+	чтобы можно было использовать картинки любого размера
+*/
+figure {
+	position: absolute;
+	top: 0;
+		bottom:0;
+		left:0;
+		right:0;
+}
+figure img {
+	display: block;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+}
+/* 
+	Плашка, которая будет появляться при наведении на картинку,
+	Размер текста и внутренние отступы привязаны к размеру экрана
+ */
+figcaption {
+	position: absolute;
+	bottom: 15%;
+	left:0;
+	padding: 1vmax;
+	color: #fff;
+	background-color: #000;
+	font-size: 2vmax;
+	opacity: 0.5;
+	display:none;
+}
+figure:hover figcaption {
+	display: block;
+}
+
+input[name='raiting'] {
+	vertical-align: middle;
+	text-align: end;
+}
+.breed {
+	display: none;
+}
+.flex-container {
+	width: 100%;
+	display: flex;
+}
+.photos-content {
+	flex: 1 1 auto;
+}
+.filter {
+	align-self: stretch;
+	background-color: #d9d9d9;
+	margin-right: 10px;
+}
+.filter li label {
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+	box-shadow: 0 1px 0 #fff, 0 2px 0 #7c7c7c;
+	white-space: nowrap;
+}
+.flex-container .filter li:hover {
+	opacity: 0.5;
+}
+input.breed[value="abyssine"]:checked ~ .flex-container .filter li.abyssine,
+input.breed[value="britain"]:checked ~ .flex-container .filter li.britain,
+input.breed[value="russian_blue"]:checked ~ .flex-container .filter li.russian_blue,
+input.breed[value="syam"]:checked ~ .flex-container .filter li.syam		
+{
+	background-color: #5a5a5a;
+	color: #fff;
+}
+input.breed[value="abyssine"]:checked ~ .flex-container .photos-content img:not(.abyssine),
+input.breed[value="britain"]:checked ~ .flex-container .photos-content img:not(.britain),
+input.breed[value="russian_blue"]:checked ~ .flex-container .photos-content img:not(.russian_blue),
+input.breed[value="syam"]:checked ~ .flex-container .photos-content img:not(.syam)
+{
+	opacity: 0.4;
+}
+
+/* 
+	Фотографии - сетка размером 3 элемента в строке 
+	высота сетки привязана к высоте минимального элемента
+*/
+.photos-content .wrapper {
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+	grid-auto-rows: minmax(100px,min-content);
+	grid-gap:10px;
+}
+.photos-content li {
+	position: relative;
+	min-width: 90px;
+}
+
+/*
+	"Растяжки" по высоте для элементов грида, нужны для фиксированного размера,
+	Алгоритм потом выберет минимальную высоту в строке и под нее подстроит 
+	все элементы в строке (как я понял)
+ */
+.photos-content li::before {
+	content:'';
+	display: block;
+	margin-top:110%;			
+}
+.photos-content li:nth-child(8n+2)::before,
+.photos-content li:nth-child(8n+6)::before {
+	margin-top:50%;
+}
+.photos-content li:nth-child(8n+8)::before {
+	margin-top:35%;
+}
+
+/* 
+	Элементы на определенных местах будут занимать 2 или 3 ячейки сейтки
+ */
+.photos-content li:nth-child(8n+2),
+.photos-content li:nth-child(8n+6) {
+	grid-column: span 2;
+} 		
+.photos-content li:nth-child(8n+8) {
+	grid-column: span 3;
+}
+
+/* 
+	Стили под правую колонку 
+*/
+.raiting {
+	align-self: start;
+	text-align: right;
+	padding: 5px 20px 10px 10px;
+	margin-left: 10px;
+	background-color: #d9d9d9;
+}
+.raiting h3 {
+	text-align: start;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	color: #db0606;
+	font-weight: normal;
+}
+.raiting label {
+	font-size: 12px;
+}
+/* Обертка под списки определений, запускающая их флексом */
+.raiting .wrapper {
+	display: flex;
+	flex-direction: column;
+}
+.raiting dl {
+	width: 160px;
+	margin-top: 20px;
+}
+.raiting dt {
+	text-align: start;
+	padding-bottom: 7px;
+}
+.raiting dl dd {
+	float: left;
+	position: relative;
+	height: 16px;
+	width: 120px;
+}
+/* 
+	Линия прогресса оформлена псевдоэлементом, ширина которого 
+	составляет процент от максимального значения рейтинга (в данном случае 10), 
+	а цвет тоже определяется как смещение в цветовой палитре, где мЕньшие значения
+	близки к красному, а бОльшие к зеленому
+*/
+.raiting dl dd::before {
+	content: '';
+	display: block;
+	height: 100%;
+	width: calc(100% * (var(--order) / 10));
+	background: linear-gradient(to right, hsl(calc(80 * (var(--order)/10)), 60%, 44%), #fff);
+}
+
+/* 
+	Значение прогресса - это псевдоэлемент, значение которого берется из атрибута, а
+	сам он выходит за пределы родительского элемента
+*/
+.raiting dl dd::after {
+	content: attr(data-raiting);
+	position: absolute;
+	display: block;
+	left:0;
+	top:0;
+	width: 40px;
+	text-align: center;
+	margin-left: calc(100%);
+	font-weight: bold;
+}
+
+/* Назначение сортировки в зависимости от нажатия на соответствующий инпут */
+#raiting:checked ~ div > dl {
+	order: var(--order);
+}
+#raiting:checked ~ .wrapper {
+	flex-direction: column-reverse;
+}
+
+
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px 30px;
+	background-color: #ebebeb;
+	font-size: 12px;
+	box-shadow: 0 -1px 0 #fff, 0 -1px 2px #7c7c7c;
+}
+footer .right, address {
+	color: blue;
+	float: right;
+	font-style: normal;
+}
