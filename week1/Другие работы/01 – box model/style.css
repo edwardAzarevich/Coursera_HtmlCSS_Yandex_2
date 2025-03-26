@@ -1,0 +1,221 @@
+* {
+    font-family: "Helvetica Neue", Helvetica, Arial, "SF Pro", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    width: 1200px;
+}
+
+.product-card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+    transition: all .3s;
+
+    margin: 0;
+    float: left;
+    width: 25%;
+}
+
+@media screen and (max-width: 1440px) {
+    .container {
+        width: 900px;
+    }
+    .product-card {
+        width: 33.333%;
+    }
+}
+
+.product-card:hover {
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+.product-thumb a {
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    height: 200px;
+    padding: 20px;
+}
+
+.product-thumb img {
+    max-width: 250px;
+    max-height: 250px;
+    margin: 0 auto;
+}
+
+.product-thumb img:hover {
+    opacity: 0.7;
+    transition: all .3s;
+}
+
+.product-details, p.product-description {
+    margin: 20px;
+}
+
+.product-details h3 {
+    display: inline;
+}
+
+.product-details h3 a {
+    font-weight: 500;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.product-details h3 a:hover {
+    color: #880101;
+    transition: all .3s;
+}
+
+.product-thumb img:hover {
+    opacity: 0.7;
+    transition: all .3s;
+}
+
+.product-details h4 {
+    /*display: inline;*/
+    margin: 0.5em 0;
+    font-weight: 500;
+    color: #777;
+    font-size: 12px;
+}
+
+.product-details h4 a {
+    color: #777;
+}
+
+.product-details h4 a:nth-last-child(n+2)::after {
+    content: " -";
+}
+
+.product-description {
+    font-size: 14px;
+    margin: 0; /* Убираем внешний отступ */
+    -webkit-line-clamp: 3; /* Число отображаемых строк */
+    display: -webkit-box; /* Включаем флексбоксы */
+    -webkit-box-orient: vertical; /* Вертикальная ориентация */
+    overflow: hidden;
+}
+
+.product-bottom-details {
+    clear: both;
+    margin-bottom: 0.5em;
+}
+
+.product-price {
+    color: #880101;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.product-price small {
+    color: black;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.product-description {
+
+}
+
+input[id="grid"], input[id="list"] {
+    display: none;
+}
+
+label[for="list"], label[for="grid"] {
+    padding: 15px;
+    margin: 0;
+    background: #e5e5e5;
+    border: #bdbdbd 1px solid;
+}
+
+label[for="list"]:hover, label[for="grid"]:hover {
+    background: #f8f8f8;
+    transition: all 0.3s;
+}
+
+input[id="list"]:checked + label[for="list"],
+input[id="grid"]:checked + label[for="grid"] {
+    background: #880101;
+    color: white;
+    transition: all 0.3s;
+}
+
+/*label[for="list"] {*/
+/*    margin-left: 45%;*/
+/*}*/
+
+input[id="list"]:checked ~ .container > .product-card {
+    width: 100%;
+}
+
+input[id="list"]:checked ~ .container .product-thumb {
+    float: left;
+    margin-right: 100px;
+}
+
+input[id="list"]:checked ~ .container .product-details {
+    float: left;
+    width: 500px;
+    height: 100%;
+}
+
+input[id="list"]:checked ~ .container p.product-description {
+    display: inline-block;
+    width: 200px;
+}
+
+
+/************************************/
+
+.rating-area {
+    overflow: hidden;
+    margin-bottom: 0.75em;
+    /*float: left;*/
+    display: inline-block;
+}
+
+.rating-area:not(:checked) > input {
+    display: none;
+}
+
+.rating-area:not(:checked) > label {
+    float: right;
+    /*width: 30px;*/
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: lightgrey;
+    text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked) > label:before {
+    content: '★';
+}
+
+.rating-area > input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px #c60;
+}
+
+.rating-area:not(:checked) > label:hover,
+.rating-area:not(:checked) > label:hover ~ label {
+    color: gold;
+}
+
+.rating-area > input:checked + label:hover,
+.rating-area > input:checked + label:hover ~ label,
+.rating-area > input:checked ~ label:hover,
+.rating-area > input:checked ~ label:hover ~ label,
+.rating-area > label:hover ~ input:checked ~ label {
+    color: gold;
+    text-shadow: 1px 1px goldenrod;
+}
+
+.rate-area > label:active {
+    position: relative;
+}
