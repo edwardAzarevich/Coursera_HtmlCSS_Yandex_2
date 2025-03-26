@@ -3,8 +3,6 @@ markdown
 Copy
 # Cat Selector Project
 
-![Cat Selector Logo](https://via.placeholder.com/150) <!-- Placeholder for an image logo -->
-
 ## Project Description
 
 The **Cat Selector** is a fun web application that allows users to browse and select their favorite cats from a curated list of adorable cat images. The project is built using **HTML** and **CSS**, focusing on creating an engaging and visually appealing interface.
